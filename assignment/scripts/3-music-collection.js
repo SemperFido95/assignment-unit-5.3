@@ -49,4 +49,5 @@ let findByArtist = (array, name) => {
     return artistArray;
 }
 
+//testing findByArtist()
 console.log('Test - should return Foo Fighters', findByArtist(collection, 'Foo Fighters'));
