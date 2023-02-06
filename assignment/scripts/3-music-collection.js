@@ -34,3 +34,19 @@ let showCollection = array => {
 
 //testing showCollection()
 showCollection(collection);
+
+let findByArtist = (array, name) => {
+    //empty array
+    let artistArray = [];
+    //Compares each ablum's .artist property to value of name argument
+    array.forEach(album => {
+        //pushes matched name into new array
+        if (name === album.artist) {
+            artistArray.push(name);
+        }
+    });
+    //returns array of matches from forEach iterator
+    return artistArray;
+}
+
+console.log('Test - should return Foo Fighters', findByArtist(collection, 'Foo Fighters'));
