@@ -50,4 +50,24 @@ let findByArtist = (array, name) => {
 }
 
 //testing findByArtist()
-console.log('Test - should return Foo Fighters', findByArtist(collection, 'Foo Fighters'));
+console.log('Test - should return Foo Fighters:', findByArtist(collection, 'Foo Fighters'));
+
+//Stretch Goals
+
+function search(array, object) {
+    let match = [];
+    //if object is truthy (not an empty object)
+    if (object) {
+        console.log('here')
+        array.forEach(album => {
+            if ((album.title === object.title) && (album.artist === object.artist) && (object.yearPublished === object.yearPublished)) {
+                match.push(object);
+            };
+        });
+        return match;
+    } else {
+        return collection;
+    }
+}
+
+console.log('Testing search function:', search(collection, {}));
