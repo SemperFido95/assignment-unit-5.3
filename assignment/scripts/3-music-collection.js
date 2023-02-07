@@ -57,7 +57,7 @@ console.log('Test - should return Foo Fighters:', findByArtist(collection, 'Foo 
 function search(array, object) {
     let match = [];
     //if object is truthy (not an empty object)
-    if (object) {
+    if ((object) && (Object.keys(object).length > 0)) {
         console.log('here')
         array.forEach(album => {
             if ((album.title === object.title) && (album.artist === object.artist) && (object.yearPublished === object.yearPublished)) {
@@ -70,4 +70,8 @@ function search(array, object) {
     }
 }
 
-console.log('Testing search function:', search(collection, {}));
+console.log('Test 1 - should return collection array:', search(collection));
+console.log('Test 2 - should return collection array:', search(collection, {}));
+console.log('Test 3 - should return collection array:', search());
+console.log('Test 4 - should return empty array', search(collection, {artist: 'Ray Charles', yearPublished: 1957}));
+console.log('Test 5 - should return array of matched result:', search(collection, {title: 'Wasting Light', artist: 'Foo Fighters', yearPublished: 2011}))
