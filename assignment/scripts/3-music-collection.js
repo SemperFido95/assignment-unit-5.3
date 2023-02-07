@@ -56,9 +56,9 @@ console.log('Test - should return Foo Fighters:', findByArtist(collection, 'Foo 
 
 function search(array, object) {
     let match = [];
-    //if object is truthy (not an empty object)
+    //checks ot see if object not empty or missing
     if ((object) && (Object.keys(object).length > 0)) {
-        console.log('here')
+        //checks to see if each object matches the search
         array.forEach(album => {
             if ((album.title === object.title) && (album.artist === object.artist) && (object.yearPublished === object.yearPublished)) {
                 match.push(object);
